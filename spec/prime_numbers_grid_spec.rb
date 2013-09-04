@@ -18,11 +18,11 @@ describe PrimeNumbersGrid do
   end
 
   describe '#new' do
-    context 'given a row size of N' do
-      it 'populates first N prime numbers' do
-        grid.base_row.first.should == 2
-        grid.base_row[6].should == 17
-        grid.base_row.last.should == 29
+    context 'given  a row of size "n"' do
+      it 'populates first "n" prime numbers' do
+        grid.prime_numbers.first.should == 2
+        grid.prime_numbers[6].should == 17
+        grid.prime_numbers.last.should == 29
       end
       it 'creates a row for each prime number' do
         grid.rows.first.base_number.should == 2
