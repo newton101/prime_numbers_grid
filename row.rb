@@ -8,11 +8,7 @@ class Row
     @base_number, @prime_numbers = base_number, prime_numbers
   end
 
-  def multiples
-    @multiples ||= prime_numbers.map {|num| num * base_number }
-  end
-
-  def to_s
-    Printer.draw self.multiples
+  def multiplied_values
+    @multiplied_values ||= prime_numbers.map {|num| num * base_number }
   end
 end

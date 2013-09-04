@@ -24,11 +24,11 @@ describe PrimeNumbersGrid do
         grid.prime_numbers[6].should == 17
         grid.prime_numbers.last.should == 29
       end
-      it 'creates a row for each prime number' do
-        grid.rows.first.base_number.should == 2
-        grid.rows[6].base_number.should == 17
-        grid.rows.last.base_number.should == 29
-      end
+    end
+  end
+  describe '#each' do
+    it 'returns multiplied values for first prime number' do
+        grid.first.should == [4, 6, 10, 14, 22, 26, 34, 38, 46, 58]
     end
   end
 end

@@ -10,6 +10,8 @@ class PrimeNumbersGrid
 
   attr_reader :prime_numbers
 
+  include Enumerable
+
   def initialize(size)
     @row_size = size
     @prime_numbers = []
@@ -20,9 +22,17 @@ class PrimeNumbersGrid
     @rows ||= prime_numbers.map { |number| Row.new number, prime_numbers }
   end
 
+  def each(&block)
+    return block.call([]) if prime_numbers.empty?
+
+    prime_numbers.each do |number|
+       block.call Row.new(number, prime_numbers).multiplied_values
+    end
+  end
+
   def print
-    rows.each do |row|
-      Printer.draw row.multiples
+    self.each do |row|
+      Printer.draw row
     end
   end
 

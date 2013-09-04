@@ -1,6 +1,9 @@
 class Printer
   def self.draw(row)
-    row.map {|element|  add_buffer(element, 4) }.join
+    row.each do|element|
+      print add_buffer(element, 4)
+    end
+    print "\n"
   end
 
   def self.add_buffer(element, buffer_size)
