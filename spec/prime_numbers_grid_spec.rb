@@ -1,6 +1,8 @@
 require_relative '../prime_numbers_grid'
 
 describe PrimeNumbersGrid do
+  let(:grid) {PrimeNumbersGrid.new(10)}
+
   describe '#prime?' do
     context 'given a number' do
       it 'returns true if number is a prime number' do
@@ -17,10 +19,15 @@ describe PrimeNumbersGrid do
 
   describe '#new' do
     context 'given a row size of N' do
-      it 'returns first N prime numbers' do
-        grid = PrimeNumbersGrid.new(10)
-        grid.row.first.should == 2
-        grid.row.last.should == 29
+      it 'populates first N prime numbers' do
+        grid.base_row.first.should == 2
+        grid.base_row[6].should == 17
+        grid.base_row.last.should == 29
+      end
+      it 'creates a row for each prime number' do
+        grid.rows.first.base_number.should == 2
+        grid.rows[6].base_number.should == 17
+        grid.rows.last.base_number.should == 29
       end
     end
   end

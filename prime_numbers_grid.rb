@@ -7,22 +7,34 @@ class Fixnum
 end
 class PrimeNumbersGrid
 
-  attr_reader :row
+  attr_reader :base_row
 
   def initialize(size)
     @row_size = size
-    @row = []
-    populate_row
+    @base_row = []
+    populate_base_row
   end
 
-  def populate_row
+  def rows
+    @rows ||= base_row.map { |number| Row.new number, base_row }
+  end
+
+  def print
+    rows.each do |row|
+      Printer.draw row.multiples
+    end
+  end
+
+  private
+
+  def populate_base_row
     number = 2
-    while row.size < @row_size
+    while base_row.size < @row_size
        if number.prime?
-        row << number
+        base_row << number
       end
       number += 1
     end
-    row
+    base_row
   end
 end
