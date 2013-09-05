@@ -1,20 +1,18 @@
-##Prime Numbers Challenge
+### Prime Numbers Challenge
 
 This is my solution to a program that prints out a multiplication table of the first 10 prime numbers.
-
 The program must run from the command line and print to screen 1 table.
-
 The body of the table should contain the product of multiplying these numbers.
-
 The prime numbers should be calculated by you, instead use some method from your language.
 
 
 
-##Run the command below to see the solution.
+#### Run the command below to see the solution.
 
 $ ruby prime_numbers_challenge.rb
 
-##Output
+````
+#### Output
 
 4   |6   |10  |14  |22  |26  |34  |38  |46  |58  |
 6   |9   |15  |21  |33  |39  |51  |57  |69  |87  |
@@ -26,3 +24,5 @@ $ ruby prime_numbers_challenge.rb
 38  |57  |95  |133 |209 |247 |323 |361 |437 |551 |
 46  |69  |115 |161 |253 |299 |391 |437 |529 |667 |
 58  |87  |145 |203 |319 |377 |493 |551 |667 |841 |
+
+````
